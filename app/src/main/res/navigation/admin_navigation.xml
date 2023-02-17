@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.bethwelamkenya.churchapp.fragments.admin.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_allAttendanceFragment"
+            app:destination="@id/allAttendanceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allMembersFragment"
+            app:destination="@id/allMembersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_specificAttendanceFragment"
+            app:destination="@id/specificAttendanceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myAccountFragment"
+            app:destination="@id/myAccountFragment" />
+        <action
+            android:id="@+id/action_homeFragment_self2"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allMembersFragment"
+        android:name="com.bethwelamkenya.churchapp.fragments.admin.AllMembersFragment"
+        android:label="All Members"
+        tools:layout="@layout/fragment_all_members">
+        <action
+            android:id="@+id/action_allMembersFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_allMembersFragment_to_specificAttendanceFragment"
+            app:destination="@id/specificAttendanceFragment" />
+        <action
+            android:id="@+id/action_allMembersFragment_to_myAccountFragment"
+            app:destination="@id/myAccountFragment" />
+        <action
+            android:id="@+id/action_allMembersFragment_self"
+            app:destination="@id/allMembersFragment" />
+        <action
+            android:id="@+id/action_allMembersFragment_to_allAttendanceFragment"
+            app:destination="@id/allAttendanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allAttendanceFragment"
+        android:name="com.bethwelamkenya.churchapp.fragments.admin.AllAttendanceFragment"
+        android:label="All Attendances"
+        tools:layout="@layout/fragment_all_attendance">
+        <action
+            android:id="@+id/action_allAttendanceFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_allAttendanceFragment_to_allMembersFragment"
+            app:destination="@id/allMembersFragment" />
+        <action
+            android:id="@+id/action_allAttendanceFragment_to_myAccountFragment"
+            app:destination="@id/myAccountFragment" />
+        <action
+            android:id="@+id/action_allAttendanceFragment_to_specificAttendanceFragment"
+            app:destination="@id/specificAttendanceFragment" />
+        <action
+            android:id="@+id/action_allAttendanceFragment_self"
+            app:destination="@id/allAttendanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/specificAttendanceFragment"
+        android:name="com.bethwelamkenya.churchapp.fragments.admin.SpecificAttendanceFragment"
+        android:label="Specific Attendance"
+        tools:layout="@layout/fragment_specific_attendance">
+        <action
+            android:id="@+id/action_specificAttendanceFragment_self"
+            app:destination="@id/specificAttendanceFragment" />
+        <action
+            android:id="@+id/action_specificAttendanceFragment_to_allMembersFragment"
+            app:destination="@id/allMembersFragment" />
+        <action
+            android:id="@+id/action_specificAttendanceFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_specificAttendanceFragment_to_allAttendanceFragment"
+            app:destination="@id/allAttendanceFragment" />
+        <action
+            android:id="@+id/action_specificAttendanceFragment_to_myAccountFragment"
+            app:destination="@id/myAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.bethwelamkenya.churchapp.fragments.admin.MyAccountFragment"
+        android:label="My Account"
+        tools:layout="@layout/fragment_my_account">
+        <action
+            android:id="@+id/action_myAccountFragment_self"
+            app:destination="@id/myAccountFragment" />
+        <action
+            android:id="@+id/action_myAccountFragment_to_specificAttendanceFragment"
+            app:destination="@id/specificAttendanceFragment" />
+        <action
+            android:id="@+id/action_myAccountFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_myAccountFragment_to_allMembersFragment"
+            app:destination="@id/allMembersFragment" />
+        <action
+            android:id="@+id/action_myAccountFragment_to_allAttendanceFragment"
+            app:destination="@id/allAttendanceFragment" />
+    </fragment>
+</navigation>
