@@ -16,4 +16,5 @@
     <color name="secondaryMain">#7143E4</color>
     <color name="secondaryMainDark">#6031d3</color>
     <color name="secondaryVariant">#AB47BC</color>
+    <color name="textHint">#989898</color>
 </resources>

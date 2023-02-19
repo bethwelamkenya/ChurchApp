@@ -38,29 +38,36 @@ class AdminHomeActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.homeFrag -> {
                     navigateToHome()
+                    binding.mainContainer.closeDrawer(binding.navigationView)
                         return@setNavigationItemSelectedListener true
                     }
                 R.id.allMembers -> {
                     navigateToAllMembers()
+                    binding.mainContainer.closeDrawer(binding.navigationView)
                     return@setNavigationItemSelectedListener true
                 }
                 R.id.attendance -> {
                     navigateAllAttendances()
+                    binding.mainContainer.closeDrawer(binding.navigationView)
                     return@setNavigationItemSelectedListener true
                 }
                 R.id.specific -> {
                     navigateToSpecificAttendances()
+                    binding.mainContainer.closeDrawer(binding.navigationView)
                     return@setNavigationItemSelectedListener true
                 }
                 R.id.myAccount -> {
                     navigateToMyAccount()
+                    binding.mainContainer.closeDrawer(binding.navigationView)
                     return@setNavigationItemSelectedListener true
                 }
                 else -> {
+                    binding.mainContainer.closeDrawer(binding.navigationView)
                     return@setNavigationItemSelectedListener false
                 }
             }
         }
+        binding.addMember.setOnClickListener { navigateToAddMember() }
     }
 
     private fun navigateToHome() {
@@ -163,6 +170,26 @@ class AdminHomeActivity : AppCompatActivity() {
         }
     }
 
+    private fun navigateToAddMember(){
+        when (navController.currentDestination?.id){
+            R.id.homeFragment -> {
+                findNavController(R.id.fragmentContainerView).navigate(R.id.action_homeFragment_to_addMemberFragment)
+            }
+            R.id.allMembersFragment -> {
+                findNavController(R.id.fragmentContainerView).navigate(R.id.action_allMembersFragment_to_addMemberFragment)
+            }
+            R.id.allAttendanceFragment -> {
+                findNavController(R.id.fragmentContainerView).navigate(R.id.action_allAttendanceFragment_to_addMemberFragment)
+            }
+            R.id.specificAttendanceFragment -> {
+                findNavController(R.id.fragmentContainerView).navigate(R.id.action_specificAttendanceFragment_to_addMemberFragment)
+            }
+            R.id.myAccountFragment -> {
+                findNavController(R.id.fragmentContainerView).navigate(R.id.action_myAccountFragment_to_addMemberFragment)
+            }
+        }
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp()
     }
@@ -174,6 +201,8 @@ class AdminHomeActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            androidx.appcompat.R.id.home -> {
+            }
             R.id.homeFrag -> {
                 navigateToHome()
                 Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()

@@ -1,15 +1,15 @@
 package com.bethwelamkenya.churchapp.model
 
 data class Member(
-    var id: Long,
-    var name: String,
-    var email: String,
-    var regNo: String,
-    var number: Long,
-    var school: String,
-    var year: Int,
-    var department: String,
-    var residence: String
+    val id: Long,
+    val name: String,
+    val email: String,
+    val regNo: String,
+    val number: Long,
+    val school: String,
+    val year: Int,
+    val department: String,
+    val residence: String
 ){
     constructor(
         name: String,

@@ -3,8 +3,43 @@
     <array name="accounts">
         <item>Admin</item>
         <item>Member</item>
-        <item>Admin</item>
+        <item>Developer</item>
     </array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <array name="schools">
+        <item>Engineering</item>
+        <item>Education</item>
+        <item>Science</item>
+        <item>Arts</item>
+        <item>Business</item>
+        <item>Business</item>
+        <item>Law</item>
+        <item>Law</item>
+        <item>Medicine</item>
+        <item>Aerospace</item>
+        <item>Community</item>
+    </array>
+    <array name="years">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+        <item>Community</item>
+    </array>
+    <array name="departments">
+        <item>Media</item>
+        <item>Keyboardist</item>
+        <item>Worshipper</item>
+        <item>Usher</item>
+        <item>Technician</item>
+        <item>Intercessor</item>
+        <item>Security</item>
+        <item>Protocol</item>
+        <item>Sanitation</item>
+        <item>Violinist</item>
+        <item>Pastor</item>
+        <item>Bishop</item>
+        <item>None</item>
+    </array>
+    <string name="hello_blank_fragment">Hello other blank fragment</string>
 </resources>
