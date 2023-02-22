@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/member_navigation"
+    app:startDestination="@id/memberHomeFragment">
+
+    <fragment
+        android:id="@+id/memberHomeFragment"
+        android:name="com.bethwelamkenya.churchapp.fragments.member.MemberHomeFragment"
+        android:label="fragment_member_home"
+        tools:layout="@layout/fragment_member_home" >
+        <action
+            android:id="@+id/action_memberHomeFragment_to_memberAttendancesFragment"
+            app:destination="@id/memberAttendancesFragment" />
+        <action
+            android:id="@+id/action_memberHomeFragment_to_memberAccountFragment"
+            app:destination="@id/memberAccountFragment" />
+        <action
+            android:id="@+id/action_memberHomeFragment_self"
+            app:destination="@id/memberHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberAccountFragment"
+        android:name="com.bethwelamkenya.churchapp.fragments.member.MemberAccountFragment"
+        android:label="fragment_member_account"
+        tools:layout="@layout/fragment_member_account" >
+        <action
+            android:id="@+id/action_memberAccountFragment_to_memberHomeFragment"
+            app:destination="@id/memberHomeFragment" />
+        <action
+            android:id="@+id/action_memberAccountFragment_to_memberAttendancesFragment"
+            app:destination="@id/memberAttendancesFragment" />
+        <action
+            android:id="@+id/action_memberAccountFragment_self"
+            app:destination="@id/memberAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberAttendancesFragment"
+        android:name="com.bethwelamkenya.churchapp.fragments.member.MemberAttendancesFragment"
+        android:label="fragment_member_attendances"
+        tools:layout="@layout/fragment_member_attendances" >
+        <action
+            android:id="@+id/action_memberAttendancesFragment_to_memberHomeFragment"
+            app:destination="@id/memberHomeFragment" />
+        <action
+            android:id="@+id/action_memberAttendancesFragment_to_memberAccountFragment"
+            app:destination="@id/memberAccountFragment" />
+        <action
+            android:id="@+id/action_memberAttendancesFragment_self"
+            app:destination="@id/memberAttendancesFragment" />
+    </fragment>
+</navigation>

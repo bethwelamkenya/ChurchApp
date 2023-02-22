@@ -6,6 +6,7 @@
         android:id="@+id/app_bar_search"
         android:icon="@drawable/search"
         android:title="Search"
+        android:iconTint="@color/white"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom" />
 
@@ -33,5 +34,15 @@
         android:id="@+id/myAccount"
         android:icon="@drawable/contacts"
         android:title="Account"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/logOut"
+        android:icon="@drawable/logout_rounded_left"
+        android:title="LogOut"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/exit"
+        android:icon="@drawable/shutdown"
+        android:title="Quit"
         app:showAsAction="ifRoom" />
 </menu>

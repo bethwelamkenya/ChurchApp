@@ -16,19 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/back"
-                style="@android:style/Widget.Material.ImageButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/transparent"
-                android:contentDescription="Go Back"
-                android:src="@drawable/back"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
@@ -36,8 +23,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Name"
+                android:textColor="@color/textHint"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/back" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -46,6 +35,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Email"
+                android:textColor="@color/textHint"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -56,6 +47,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Registration Number"
+                android:textColor="@color/textHint"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/email" />
 
@@ -66,6 +59,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Mobile Number"
+                android:textColor="@color/textHint"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/regNo" />
 
@@ -76,6 +71,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="School"
+                android:textColor="@color/textHint"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/number" />
 
@@ -86,6 +83,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Year"
+                android:textColor="@color/textHint"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/school" />
 
@@ -96,6 +95,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Department"
+                android:textColor="@color/textHint"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/year" />
 
@@ -106,8 +107,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Residence"
+                android:textColor="@color/textHint"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/department"/>
+                app:layout_constraintTop_toBottomOf="@+id/department" />
 
             <EditText
                 android:id="@+id/name"
@@ -225,6 +228,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="Residence"
                 android:inputType="textPersonName"
@@ -232,28 +236,31 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/white"
                 android:textColorHint="@color/textHint"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14"
-                android:autofillHints=""/>
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/residence"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <Button
                     android:id="@+id/addNewMember"
                     android:layout_width="wrap_content"
                     android:layout_height="75dp"
                     android:layout_margin="10dp"
+                    android:layout_weight="1"
                     android:elevation="5dp"
                     android:text="Add Member"
                     android:textAllCaps="true"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     app:cornerRadius="10dp"
                     app:icon="@drawable/add_user_male" />
 
@@ -262,10 +269,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="75dp"
                     android:layout_margin="10dp"
+                    android:layout_weight="1"
                     android:elevation="5dp"
                     android:text="Cancel"
                     android:textAllCaps="true"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     app:cornerRadius="10dp"
                     app:icon="@drawable/delete_sign" />
             </LinearLayout>

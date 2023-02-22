@@ -124,9 +124,6 @@
         <action
             android:id="@+id/action_myAccountFragment_to_allAttendanceFragment"
             app:destination="@id/allAttendanceFragment" />
-        <action
-            android:id="@+id/action_myAccountFragment_to_addMemberFragment"
-            app:destination="@id/addMemberFragment" />
     </fragment>
     <fragment
         android:id="@+id/addMemberFragment"
@@ -134,20 +131,20 @@
         android:label="fragment_add_member"
         tools:layout="@layout/fragment_add_member" >
         <action
+            android:id="@+id/action_addMemberFragment_to_allMembersFragment"
+            app:destination="@id/allMembersFragment" />
+        <action
+            android:id="@+id/action_addMemberFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_addMemberFragment_to_allAttendanceFragment"
+            app:destination="@id/allAttendanceFragment" />
+        <action
             android:id="@+id/action_addMemberFragment_to_specificAttendanceFragment"
             app:destination="@id/specificAttendanceFragment" />
         <action
             android:id="@+id/action_addMemberFragment_to_myAccountFragment"
             app:destination="@id/myAccountFragment" />
-        <action
-            android:id="@+id/action_addMemberFragment_to_allMembersFragment"
-            app:destination="@id/allMembersFragment" />
-        <action
-            android:id="@+id/action_addMemberFragment_to_allAttendanceFragment"
-            app:destination="@id/allAttendanceFragment" />
-        <action
-            android:id="@+id/action_addMemberFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/editMemberFragment"
@@ -157,5 +154,17 @@
         <action
             android:id="@+id/action_editMemberFragment_to_allMembersFragment"
             app:destination="@id/allMembersFragment" />
+        <action
+            android:id="@+id/action_editMemberFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_editMemberFragment_to_allAttendanceFragment"
+            app:destination="@id/allAttendanceFragment" />
+        <action
+            android:id="@+id/action_editMemberFragment_to_myAccountFragment"
+            app:destination="@id/myAccountFragment" />
+        <action
+            android:id="@+id/action_editMemberFragment_to_specificAttendanceFragment"
+            app:destination="@id/specificAttendanceFragment" />
     </fragment>
 </navigation>

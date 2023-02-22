@@ -10,7 +10,7 @@ data class Member(
     val year: Int,
     val department: String,
     val residence: String
-){
+): java.io.Serializable{
     constructor(
         name: String,
         email: String,

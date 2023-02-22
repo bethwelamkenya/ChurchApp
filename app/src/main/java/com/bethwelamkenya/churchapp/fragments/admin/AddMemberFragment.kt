@@ -6,14 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.bethwelamkenya.churchapp.R
 import com.bethwelamkenya.churchapp.database.DatabaseAdapter
 import com.bethwelamkenya.churchapp.model.Member
 import com.bethwelamkenya.churchapp.ui.AdminHomeActivity
 
 class AddMemberFragment : Fragment() {
-
-    private lateinit var back: ImageButton
     private lateinit var cancel: Button
     private lateinit var addAdmin: Button
     private lateinit var name: EditText
@@ -36,7 +35,6 @@ class AddMemberFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_add_member, container, false)
         adminHomeActivity = AdminHomeActivity()
         adapter = DatabaseAdapter(view.context)
-        back = view.findViewById(R.id.back)
         cancel = view.findViewById(R.id.cancel)
         addAdmin = view.findViewById(R.id.addNewMember)
 
@@ -50,12 +48,11 @@ class AddMemberFragment : Fragment() {
         residence = view.findViewById(R.id.residence)
 //        addAdmin.isEnabled = false
 //        back.setOnClickListener { adminHomeActivity.onBackPressed() }
-        cancel.setOnClickListener { back.performClick() }
-        addAdmin.setOnClickListener { insertMember() }
+        addAdmin.setOnClickListener { insertMember(view) }
         return view
     }
 
-    private fun insertMember(){
+    private fun insertMember(view: View) {
         val member = Member(
             name.text.toString(),
             email.text.toString(),
@@ -65,15 +62,16 @@ class AddMemberFragment : Fragment() {
             year.selectedItemPosition,
             department.selectedItem.toString(),
             residence.text.toString())
-        if (adapter.getMember(name.text.toString()) == null){
+        if (adapter.getMember(name.text.toString()).size == 0){
             if (adapter.insertMember(member).toInt() != -0) {
-                Toast.makeText(adminHomeActivity, "Member Inserted Successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(view.context, "Member Inserted Successfully", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_addMemberFragment_to_allMembersFragment)
             } else {
-                Toast.makeText(adminHomeActivity, "Could Not Insert Member", Toast.LENGTH_SHORT).show()
+                Toast.makeText(view.context, "Could Not Insert Member", Toast.LENGTH_SHORT).show()
             }
 
         } else {
-            Toast.makeText(adminHomeActivity, "Member Already Exists", Toast.LENGTH_SHORT).show()
+            Toast.makeText(view.context, "Member Already Exists", Toast.LENGTH_SHORT).show()
         }
     }
 }

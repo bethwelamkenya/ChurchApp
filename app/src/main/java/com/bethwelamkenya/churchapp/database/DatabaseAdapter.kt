@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
+import android.database.CursorIndexOutOfBoundsException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
@@ -208,8 +209,9 @@ class DatabaseAdapter(context: Context) : SQLiteOpenHelper(context, database_nam
     }
 
     @SuppressLint("Range")
-    fun getMember(theName: String): Member? {
-        val member: Member
+    fun getMember(theName: String): ArrayList<Member> {
+        val members = ArrayList<Member>()
+//        val member: Member
         val query = "select * from $member_table where $name=?"
         val db = this.readableDatabase
         val cursor: Cursor?
@@ -219,25 +221,27 @@ class DatabaseAdapter(context: Context) : SQLiteOpenHelper(context, database_nam
         } catch (ex: SQLiteException){
             println(ex.message)
             db.execSQL(query)
-            return null
+            return ArrayList()
         }
         try {
-            member = Member(cursor.getLong(cursor.getColumnIndex(id)),
-                cursor.getString(cursor.getColumnIndex(name)),
-                cursor.getString(cursor.getColumnIndex(email)),
-                cursor.getString(cursor.getColumnIndex(regNo)),
-                cursor.getLong(cursor.getColumnIndex(number)),
-                cursor.getString(cursor.getColumnIndex(school)),
-                cursor.getInt(cursor.getColumnIndex(year)),
-                cursor.getString(cursor.getColumnIndex(department)),
-                cursor.getString(cursor.getColumnIndex(residence))
-            )
-        } catch (e: SQLiteException){
+            while (cursor.moveToNext()){
+                members.add(Member(cursor.getLong(cursor.getColumnIndex(id)),
+                    cursor.getString(cursor.getColumnIndex(name)),
+                    cursor.getString(cursor.getColumnIndex(email)),
+                    cursor.getString(cursor.getColumnIndex(regNo)),
+                    cursor.getLong(cursor.getColumnIndex(number)),
+                    cursor.getString(cursor.getColumnIndex(school)),
+                    cursor.getInt(cursor.getColumnIndex(year)),
+                    cursor.getString(cursor.getColumnIndex(department)),
+                    cursor.getString(cursor.getColumnIndex(residence)))
+                )
+            }
+        } catch (e: Exception){
             println(e.message)
-            return null
+            return ArrayList()
         }
         cursor.close()
-        return member
+        return members
     }
 
     @SuppressLint("Range")

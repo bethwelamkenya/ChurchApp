@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ChurchApp</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <array name="accounts">
         <item>Admin</item>
         <item>Member</item>
@@ -38,7 +40,6 @@
         <item>Sanitation</item>
         <item>Violinist</item>
         <item>Pastor</item>
-        <item>Bishop</item>
         <item>None</item>
     </array>
     <string name="hello_blank_fragment">Hello other blank fragment</string>

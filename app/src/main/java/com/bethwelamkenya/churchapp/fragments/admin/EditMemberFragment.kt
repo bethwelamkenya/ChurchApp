@@ -16,8 +16,6 @@ import com.bethwelamkenya.churchapp.model.Member
 import com.bethwelamkenya.churchapp.ui.AdminHomeActivity
 
 class EditMemberFragment : Fragment() {
-
-    private lateinit var back: ImageButton
     private lateinit var cancel: Button
     private lateinit var editMember: Button
     private lateinit var id: EditText
@@ -40,7 +38,6 @@ class EditMemberFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_edit_member, container, false)
         adminHomeActivity = AdminHomeActivity()
         adapter = DatabaseAdapter(view.context)
-        back = view.findViewById(R.id.back)
         cancel = view.findViewById(R.id.cancel)
         editMember = view.findViewById(R.id.editMember)
 
@@ -55,7 +52,6 @@ class EditMemberFragment : Fragment() {
         residence = view.findViewById(R.id.residence)
         editMember.isEnabled = false
 //        back.setOnClickListener { adminHomeActivity.onBackPressed() }
-        cancel.setOnClickListener { back.performClick() }
         editMember.setOnClickListener { editMember() }
         return view
     }

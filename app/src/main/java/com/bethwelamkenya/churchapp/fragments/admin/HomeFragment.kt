@@ -14,6 +14,7 @@ class HomeFragment : Fragment() {
     private lateinit var allAttendancesButton: Button
     private lateinit var specificAttendancesButton: Button
     private lateinit var myAccountButton: Button
+    private lateinit var addMember: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,10 +26,12 @@ class HomeFragment : Fragment() {
         allAttendancesButton = view.findViewById(R.id.allAttendancesButton)
         specificAttendancesButton = view.findViewById(R.id.specificAttendancesButton)
         myAccountButton = view.findViewById(R.id.myAccountButton)
+        addMember = view.findViewById(R.id.addMemberButon)
         allMembersButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_allMembersFragment) }
         allAttendancesButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_allAttendanceFragment) }
         specificAttendancesButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_specificAttendanceFragment) }
         myAccountButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_myAccountFragment) }
+        addMember.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_addMemberFragment) }
         return view
     }
 
